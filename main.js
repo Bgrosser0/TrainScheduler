@@ -83,13 +83,14 @@ database.ref("/trains").on("child_added", function(snapshot, prevChildKey) {
     //-------------------------------------------------------------------
 
     // WHY CANT I ADD THE MINAWAY TO MY CURRENT TIME????
-    var locoNextArrival = moment(currentTime).format("hh:mm") + " " + minAway;
+   // var locoNextArrival = moment(currentTime).format("hh:mm") + " " + minAway;
 
 
     //-------------------------------------------------------------------
 
 
-    // var locoNextArrival = moment(locoTime, "hh:mm").subtract(minAway, "hh:mm");
+    var locoNextArrival = moment(currentTime, "hh:mm").add(minAway, "minutes").format("hh:mm");
+    
     console.log("next arrival is: " + moment(locoNextArrival).format("hh:mm"))
     
 
