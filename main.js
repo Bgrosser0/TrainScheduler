@@ -58,7 +58,7 @@ database.ref("/trains").on("child_added", function(snapshot, prevChildKey) {
 
     // MOMENT STUFF
 
-    var locoNextArrivalPretty = moment(locoNextArrival).format("HH:mm");
+   // var locoNextArrivalPretty = moment(locoNextArrival).format("HH:mm");
 
 
     // SET CURRENT TIME VARIABLE
@@ -78,7 +78,7 @@ database.ref("/trains").on("child_added", function(snapshot, prevChildKey) {
     console.log("minAway = " + minAway)
     console.log("locotime = " + locoTime)
 
-    var minAwayPretty = moment(minAway).format("HH:mm");
+    // var minAwayPretty = moment(minAway).format("HH:mm");
 
     //-------------------------------------------------------------------
 
