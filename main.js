@@ -63,8 +63,9 @@ database.ref("/trains").on("child_added", function(snapshot, prevChildKey) {
 
     // SET CURRENT TIME VARIABLE
     var currentTime = moment();
-    //console.log("current time " + moment(currentTime).format("hh:mm"));
+    console.log("current time " + moment(currentTime).format("hh:mm"));
 
+    
     // DIFFERENCE BETWEEN THE 
     var diffTime = moment().diff(moment(locoTime,"hh:mm"), "minutes");
     //console.log("difference in time " + diffTime);
@@ -74,11 +75,27 @@ database.ref("/trains").on("child_added", function(snapshot, prevChildKey) {
 
     // MINUTES UNTIL TRAIN
     var minAway = locoFrequency - timeRemainder;
+    console.log("minAway = " + minAway)
+    console.log("locotime = " + locoTime)
 
-    var locoNextArrival = moment(currentTime).add(minAway, "minutes");
+    var minAwayPretty = moment(minAway).format("HH:mm");
+
+    //-------------------------------------------------------------------
+
+    // WHY CANT I ADD THE MINAWAY TO MY CURRENT TIME????
+    var locoNextArrival = moment(currentTime).format("hh:mm") + " " + minAway;
+
+
+    //-------------------------------------------------------------------
+
+
+    // var locoNextArrival = moment(locoTime, "hh:mm").subtract(minAway, "hh:mm");
+    console.log("next arrival is: " + moment(locoNextArrival).format("hh:mm"))
     
 
+    var locoNextArrivalFormatted = moment(locoNextArrival).format("HH:mm");
+
     $("#importantTable").append("<tr><td>"+locoName+"</td><td>"+locoDestination+
-    "</td><td>"+locoFrequency+"</td><td>"+locoNextArrivalPretty+"</td><td>"+minAway+"</td>");
+    "</td><td>"+locoFrequency+"</td><td>"+locoNextArrival+"</td><td>"+minAway+"</td>");
 
 })
