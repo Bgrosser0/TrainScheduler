@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 34px;
+}
+
+#mainContainer {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    clear: both;
+    background-color: rgb(31, 31, 63);
+    padding: 20px;
+}
+
+#jjjumbotron {
+    background: black;
+    text-align: center;
+    color: white;
+}
+
+#scheduleDiv {
+    text-align: center;
+    width: 100%;
+    float: center;
+}
+
+#card1Header {
+    background: rgb(0, 0, 0); 
+    color: rgb(201, 5, 5);
+    text-align: left;
+}
+
+#card2Header {
+    background: rgb(0, 0, 0); 
+    color: rgb(201, 5, 5);
+    text-align: left;
+
+}
+
+#formDiv {
+    text-align: left;
+}
+
+.form-group {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+}
+
+#colortext {
+    color: rgb(201, 5, 5);
+}
+
